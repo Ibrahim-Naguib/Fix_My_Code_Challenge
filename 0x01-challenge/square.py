@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+# Square class module
+
 
 class Square():
     """
@@ -11,7 +13,7 @@ class Square():
     def __init__(self, width=0, height=0):
         """
         Initializes a square with the given width and height.
-        
+
         Args:
         - width: The width of the square.
         - height: The height of the square.
@@ -28,6 +30,7 @@ class Square():
 
     def __str__(self):
         return "{}/{}".format(self.width, self.height)
+
 
 if __name__ == "__main__":
 

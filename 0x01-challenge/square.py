@@ -4,37 +4,53 @@
 
 class Square():
     """
-    A class representing a square shape.
+    A class representing a square.
 
     Attributes:
-    - width: The width of the square.
-    - height: The height of the square.
+    width (int): The width of the square.
+    height (int): The height of the square.
     """
-    def __init__(self, side_length):
+    def __init__(self, *args, **kwargs):
         """
-        Initializes a square with the given side length.
+        Initialize the Square object.
 
         Args:
-        - side_length (int): The length of a side of the square.
+        *args: Variable length argument list.
+        **kwargs: Arbitrary keyword arguments.
         """
-        self.side_length = side_length
+        for key, value in kwargs.items():
+            setattr(self, key, value)
 
     def area_of_my_square(self):
-        """ Area of the square """
-        return self.side_length * self.side_length
+        """
+        Calculate the area of the square.
 
-    def PermiterOfMySquare(self):
-        """Calculates the perimeter of the square."""
-        return 4 * self.side_length
+        Returns:
+        int: The area of the square.
+        """
+        return self.width * self.height
+
+    def perimeter_of_my_square(self):
+        """
+        Calculate the perimeter of the square.
+
+        Returns:
+        int: The perimeter of the square.
+        """
+        return self.width * 4
 
     def __str__(self):
-        """Returns a string representation of the square"""
-        return "{}/{}".format(self.side_length, self.side_length)
+        """
+        Return a string representation of the square.
+
+        Returns:
+        str: A string representing the square's dimensions.
+        """
+        return "{}/{}".format(self.width, self.height)
 
 
 if __name__ == "__main__":
-
-    s = Square(side_length=12)
+    s = Square(width=12, height=9)
     print(s)
-    print(s.area_of_my_square())
-    print(s.PermiterOfMySquare())
+    print("Area:", s.area_of_my_square())
+    print("Perimeter:", s.perimeter_of_my_square())

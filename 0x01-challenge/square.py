@@ -10,31 +10,31 @@ class Square():
     - width: The width of the square.
     - height: The height of the square.
     """
-    def __init__(self, width=0, height=0):
+    def __init__(self, side_length):
         """
-        Initializes a square with the given width and height.
+        Initializes a square with the given side length.
 
         Args:
-        - width: The width of the square.
-        - height: The height of the square.
+        - side_length (int): The length of a side of the square.
         """
-        self.width = width
-        self.height = height
+        self.side_length = side_length
 
     def area_of_my_square(self):
         """ Area of the square """
-        return self.width * self.height
+        return self.side_length * self.side_length
 
     def PermiterOfMySquare(self):
-        return (self.width * 2) + (self.height * 2)
+        """Calculates the perimeter of the square."""
+        return 4 * self.side_length
 
     def __str__(self):
-        return "{}/{}".format(self.width, self.height)
+        """Returns a string representation of the square"""
+        return "{}/{}".format(self.side_length, self.side_length)
 
 
 if __name__ == "__main__":
 
-    s = Square(width=12, height=9)
+    s = Square(side_length=12)
     print(s)
     print(s.area_of_my_square())
     print(s.PermiterOfMySquare())
